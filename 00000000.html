@@ -42,32 +42,46 @@
 		i = 2 -> x = i-1 = 1 -> 1/1/2 (1+000/1+500/2+500)
 		i = 3 -> x = i-1 = 2 -> 2/2/3 (2+000/2+500/3+500)
 	-->
+	<!-- HIỆU ỨNG CHUYỂN:
+		* Từ ngoài Zoom vào (0 -> lớn): [width: 100%; height: 100%; top: 0%; left: 0%;] -> [width: 156%; height: 156%; top: -28%; left: -28%;]
+		* Từ trong Zoom ra (lớn -> 0): [width: 156%; height: 156%; top: -28%; left: -28%;] -> [width: 100%; height: 100%; top: 0%; left: 0%;]
+		* MỘT SỐ VÍ DỤ LỚN....
+		width: 110%; height: 110%; top: -5%; left: -5%;
+		width: 120%; height: 120%; top: -10%; left: -10%;
+		width: 156%; height: 156%; top: -28%; left: -28%;
+		width: 196%; height: 196%; top: -48%; left: -48%;
+
+	-->
 	<div class="bcg" style="background-image:url('img/1.jpg');"
 	data-0="opacity: 1;"
 	data-500="opacity: 1; width: 100%; height: 100%;"
 	data-1500="opacity: 1;">
 	</div>
 
+	<!--Từ ngoài Zoom vào (0 -> lớn)-->
 	<div class="bcg" style="background-image:url('img/2.jpg');"
-	data-1000="opacity: 0; width: 156%; height: 156%; top: -28%; left: -28%;"
-	data-1500="opacity: 1;width: 100%; height: 100%; top: 0%; left: 0%;"
+	data-1000="opacity: 0; width: 100%; height: 100%; top: 0%; left: 0%;"
+	data-1500="opacity: 1; width: 120%; height: 120%; top: -10%; left: -10%;"
 	data-2500="opacity: 1;">
 	</div>
 
+	<!--Từ trong Zoom ra (lớn -> 0)-->
 	<div class="bcg" style="background-image:url('img/3.jpg');"
-	data-2000="opacity: 0; width: 100%; height: 100%; top: 0%; left: 0%;"
-	data-2500="opacity: 1; width: 196%; height: 196%; top: -48%; left: -48%;"
+	data-2000="opacity: 0; width: 120%; height: 120%; top: -10%; left: -10%;"
+	data-2500="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;"
 	data-3500="opacity: 1;">
 	</div>
 
+	<!--Từ ngoài Zoom vào (0 -> lớn)-->
 	<div class="bcg" style="background-image:url('img/4.jpg');"
-	data-3000="opacity: 0; width: 120%; height: 120%; top: -10%; left: -10%;"
-	data-3500="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;"
+	data-3000="opacity: 0; width: 100%; height: 100%; top: 0%; left: 0%;"
+	data-3500="opacity: 1; width: 120%; height: 120%; top: -10%; left: -10%;"
 	data-4500="opacity: 1;">
 	</div>
 
+	<!--Từ trong Zoom ra (lớn -> 0)-->
 	<div class="bcg" style="background-image:url('img/5.jpg');"
-	data-4000="opacity: 0; width: 110%; height: 110%; top: -5%; left: -5%;"
+	data-4000="opacity: 0; width: 120%; height: 120%; top: -10%; left: -10%;"
 	data-4500="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;"
 	data-5500="opacity: 1;">
 	</div>
@@ -91,47 +105,55 @@
 		* Vị trí đầu với: top:0%; left:100%; (góc trên cùng bên phải)
 		* Vị trí đầu với: top:100%; left:0%; (góc dưới cùng bên trái)
 
-		+ Nơi chính thức xuất hiện do Developer lựa chọn theo tọa độ: left và right
+		+ Nơi chính thức xuất hiện do Developer lựa chọn theo tọa độ: left và right (2 mốc ở giữa)
 
 		* Vị trí rời đi (sau cùng) là ngẫu nhiên với 1 trong 3 vị trí bắt đầu ở trên
 	-->
+	<!--XOAY: transform: rotate(0deg);
+		* Vị trí bắt đầu và rời đi kết thúc (sau cùng): random 180deg hoặc 90deg
+		* Nơi chính thức xuất hiện: transform: rotate(0deg); (2 mốc ở giữa)		
+	-->
+	<!--ZOOM: transform: scale(3);
+		* Vị trí bắt đầu và rời đi kết thúc (sau cùng): random scale(3) hoặc scale(5)
+		* Nơi chính thức xuất hiện: transform: scale(1); (2 mốc ở giữa)	
+	-->
 	<div class="content"
-	data-500="top:100%; left:100%; opacity: 0;"
-	data-700="opacity: 1; top:0%; left:0%;"
-	data-1300="opacity: 1; top:0%; left:0%;"
-	data-1500="top:100%; left:100%; opacity: 0;">
+	data-500="top:100%; left:100%; opacity: 0; transform: rotate(180deg); transform: scale(3);"
+	data-700="opacity: 1; top:0%; left:0%; transform: rotate(0deg); transform: scale(1);"
+	data-1300="opacity: 1; top:0%; left:0%; transform: rotate(0deg); transform: scale(1);"
+	data-1500="top:100%; left:100%; opacity: 0; transform: rotate(90deg); transform: scale(6);">
 	<h2><a href="javascript:alert('1231231')">Đây là content 1</a></h2>
 	<p>Đây là paragaraphic 1</p>		
 	</div>
 	<div class="content"
-	data-1500="top:0%; left:100%; opacity: 0;"
-	data-1700="opacity: 1; top:0%; left:0%;"
-	data-2300="opacity: 1; top:0%; left:0%;"
-	data-2500="top:100%; left:-100%; opacity: 0;">
+	data-1500="top:0%; left:100%; opacity: 0; transform: rotate(180deg); transform: scale(5);"
+	data-1700="opacity: 1; top:0%; left:0%; transform: rotate(0deg); transform: scale(1);"
+	data-2300="opacity: 1; top:0%; left:0%; transform: rotate(0deg); transform: scale(1);"
+	data-2500="top:100%; left:-100%; opacity: 0; transform: rotate(90deg); transform: scale(3);">
 	<h2><a href="javascript:alert('2sdfsdf')">Đây là content 2</a></h2>
 	<p>Đây là paragaraphic 2</p>
 	</div>
 	<div class="content"
-	data-2500="top:100%; left:0%; opacity: 0;"
-	data-2700="opacity: 1; top:0%; left:0%;"
-	data-3300="opacity: 1; top:0%; left:0%;"
-	data-3500="top:-100%; left:100%; opacity: 0;">
+	data-2500="top:100%; left:0%; opacity: 0; transform: rotate(180deg); transform: scale(3);"
+	data-2700="opacity: 1; top:0%; left:0%; transform: rotate(0deg); transform: scale(1);"
+	data-3300="opacity: 1; top:0%; left:0%; transform: rotate(0deg); transform: scale(1);"
+	data-3500="top:-100%; left:100%; opacity: 0; transform: rotate(90deg); transform: scale(9);">
 	<h2><a href="javascript:alert('3xcvxcv')">Đây là content 3</a></h2>
 	<p>Đây là paragaraphic 3</p>
 	</div>
 	<div class="content"
-	data-3500="top:0%; left:100%; opacity: 0;"
-	data-3700="opacity: 1; top:0%; left:0%;"
-	data-4300="opacity: 1; top:0%; left:0%;"
-	data-4500="top:100%; left:-100%; opacity: 0;">
+	data-3500="top:0%; left:100%; opacity: 0; transform: rotate(180deg); transform: scale(5);"
+	data-3700="opacity: 1; top:0%; left:0%; transform: rotate(0deg); transform: scale(1);"
+	data-4300="opacity: 1; top:0%; left:0%; transform: rotate(0deg); transform: scale(1);"
+	data-4500="top:100%; left:-100%; opacity: 0; transform: rotate(90deg); transform: scale(3);">
 	<h2><a href="javascript:alert('4fwefwe')">Đây là content 4</a></h2>
 	<p>Đây là paragaraphic 4</p>
 	</div>
 	<div class="content"
-	data-4500="top:100%; left:0%; opacity: 0;"
-	data-4700="opacity: 1; top:0%; left:0%;"
-	data-5300="opacity: 1; top:0%; left:0%;"
-	data-5500="top:-100%; left:100%; opacity: 0;">
+	data-4500="top:100%; left:0%; opacity: 0; transform: rotate(180deg); transform: scale(3);"
+	data-4700="opacity: 1; top:0%; left:0%; transform: rotate(0deg); transform: scale(1);"
+	data-5300="opacity: 1; top:0%; left:0%; transform: rotate(0deg); transform: scale(1);"
+	data-5500="top:-100%; left:100%; opacity: 0; transform: rotate(90deg); transform: scale(3);">
 	<h2><a href="javascript:alert('5')">Đây là content 5</a></h2>
 	<p>Đây là paragaraphic 5</p>
 	</div>
