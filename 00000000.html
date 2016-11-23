@@ -126,7 +126,7 @@
 	data-700="opacity: 1; top:0%; left:0%; transform: rotate(0deg); transform: scale(1);"
 	data-1300="opacity: 1; top:0%; left:0%; transform: rotate(0deg); transform: scale(1);"
 	data-1500="top:100%; left:100%; opacity: 0; transform: rotate(50deg);">
-	<h2><a href="javascript:alert('1231231')">Đây là content 1</a></h2>
+	<h2><a href="javascript:pageScroll()">Đây là content 1</a></h2>
 	<p>Đây là paragaraphic 1</p>		
 	</div>
 	<div class="content"
@@ -174,6 +174,33 @@
 				return 1-p;
 			}
 		}
+	});
+	// Auto Scroll
+	function startScroll() {
+	window.scrollBy(0,3);
+	scrolldelay = setTimeout(startScroll,6);
+	}
+	function startScrollBack() {
+	window.scrollBy(0,-3);
+	scrolldelayBack = setTimeout(startScrollBack,6);
+	}
+	// stopScroll
+	function stopScroll() {
+	clearTimeout(scrolldelay);
+	clearTimeout(scrolldelayBack);
+	}
+	// Key to Auto
+	document.addEventListener("keydown", function(event) {
+	console.log(event);
+	if(event.altKey && (event.keyCode == 65)){ // Alt+A = auto
+		startScroll();
+	}
+	if(event.altKey && (event.keyCode == 83)){ // Alt+S
+		stopScroll();
+	}
+	if(event.altKey && (event.keyCode == 66)){ // Alt+B
+		startScrollBack();
+	}         
 	});
 	</script>
 </body>
