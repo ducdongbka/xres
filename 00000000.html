@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>skrollr - parallax scrolling for the masses</title>
+
+	<link href="css/fixed-positioning.css" rel="stylesheet" type="text/css" />
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+	<style>
+		.bcg {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		}
+		::-webkit-scrollbar {
+			width: 0px;  /* remove scrollbar space */
+			background: transparent;  /* optional: just make scrollbar invisible */
+		}
+	</style>
+</head>
+
+<body>
+	<!--
+		i = 1 -> x = i-1 = 0 -> 0/0/1 (000/0+500/1+500)
+		i = 2 -> x = i-1 = 1 -> 1/1/2 (1+000/1+500/2+500)
+		i = 3 -> x = i-1 = 2 -> 2/2/3 (2+000/2+500/3+500)
+	-->
+	<div class="bcg" style="background-image:url('img/1.jpg');"
+	data-0="opacity: 1;"
+	data-500="opacity: 1; width: 100%; height: 100%;"
+	data-1500="opacity: 1;">		
+	</div>
+
+	<div class="bcg" style="background-image:url('img/2.jpg');"
+	data-1000="opacity: 0; width: 156%; height: 156%; top: -28%; left: -28%;"
+	data-1500="opacity: 1;width: 100%; height: 100%; top: 0%; left: 0%;"
+	data-2500="opacity: 1;">
+	</div>
+
+	<div class="bcg" style="background-image:url('img/3.jpg');"
+	data-2000="opacity: 0; width: 100%; height: 100%; top: 0%; left: 0%;"
+	data-2500="opacity: 1; width: 196%; height: 196%; top: -48%; left: -48%;"
+	data-3500="opacity: 1;">
+	</div>
+
+	<div class="bcg" style="background-image:url('img/4.jpg');"
+	data-3000="opacity: 0; width: 120%; height: 120%; top: -10%; left: -10%;"
+	data-3500="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;"
+	data-4500="opacity: 1;">
+	</div>
+
+	<div class="bcg" style="background-image:url('img/5.jpg');"
+	data-4000="opacity: 0; width: 110%; height: 110%; top: -5%; left: -5%;"
+	data-4500="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;"
+	data-5500="opacity: 1;">
+	</div>
+
+	<script type="text/javascript" src="js/skrollr.min.js"></script>
+	<script type="text/javascript">
+	var s = skrollr.init({
+		smoothScrolling: true,
+		smoothScrollingDuration: 200,
+		edgeStrategy: 'set',
+		easing: {
+			WTF: Math.random,
+			inverted: function(p) {
+				return 1-p;
+			}
+		}
+	});
+	</script>
+</body>
+
+</html>
