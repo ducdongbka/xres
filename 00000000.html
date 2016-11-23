@@ -2,14 +2,19 @@
 <html>
 <head>
 	<meta charset="utf-8">
-
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
 	<title>skrollr - parallax scrolling for the masses</title>
 
 	<link href="css/fixed-positioning.css" rel="stylesheet" type="text/css" />
 	<link href="css/main.css" rel="stylesheet" type="text/css" />
 	<style>
+		.content {
+		color: white;
+		margin: 66px;
+		padding: 16px;
+		background-color: rgba(0,0,0,.36);
+		/*box-shadow: 10px 10px 15px rgba(0,0,0,.5);*/
+		}
 		.bcg {
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -25,10 +30,14 @@
 			background: transparent;  /* optional: just make scrollbar invisible */
 		}
 	</style>
+	<!-- HOSTED Masterial file -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
 </head>
 
 <body>
-	<!--
+	<!-- MỤC BACKGROUND
 		i = 1 -> x = i-1 = 0 -> 0/0/1 (000/0+500/1+500)
 		i = 2 -> x = i-1 = 1 -> 1/1/2 (1+000/1+500/2+500)
 		i = 3 -> x = i-1 = 2 -> 2/2/3 (2+000/2+500/3+500)
@@ -36,7 +45,7 @@
 	<div class="bcg" style="background-image:url('img/1.jpg');"
 	data-0="opacity: 1;"
 	data-500="opacity: 1; width: 100%; height: 100%;"
-	data-1500="opacity: 1;">		
+	data-1500="opacity: 1;">
 	</div>
 
 	<div class="bcg" style="background-image:url('img/2.jpg');"
@@ -61,6 +70,70 @@
 	data-4000="opacity: 0; width: 110%; height: 110%; top: -5%; left: -5%;"
 	data-4500="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;"
 	data-5500="opacity: 1;">
+	</div>
+
+	<!-- MỤC CONTENT
+		*************************** Sử dụng 4 mốc: ***************************
+		I. vị trí 2: begin ============================ opacity: 0;
+		II. Vị trí 2 + 200: BEGIN ============================ opacity: 1;
+		III. Vị trí 3 - 200: END ============================ opacity: 1;
+		IV. Vị trí 3: end ============================ opacity: 0;
+		**************************** Tổng: 600px (bỏ Vị trí 1)*****************************
+		i = 1 -> x = i-1 = 0 -> 0/0/1 (000/0+500/1+500)
+								-> bỏ 000 -> 0+500 / 0+500 + 200 / 1+500 - 200 / 1+500
+		i = 2 -> x = i-1 = 1 -> 1/1/2 (1+000/1+500/2+500)
+								-> bỏ 1+000 -> 1500 / 1500+200 / 2+500 -200 / 2+500
+		i = 3 -> x = i-1 = 2 -> 2/2/3 (2+000/2+500/3+500)
+								-> bỏ 2+000 -> 2+500 / 2+500 +200 / 3+500 -200 / 3+500
+	-->
+	<!--
+		* Vị trí đầu với: top:100%; left:100%; (góc dưới cùng bên phải)
+		* Vị trí đầu với: top:0%; left:100%; (góc trên cùng bên phải)
+		* Vị trí đầu với: top:100%; left:0%; (góc dưới cùng bên trái)
+
+		+ Nơi chính thức xuất hiện do Developer lựa chọn theo tọa độ: left và right
+
+		* Vị trí rời đi (sau cùng) là ngẫu nhiên với 1 trong 3 vị trí bắt đầu ở trên
+	-->
+	<div class="content"
+	data-500="top:100%; left:100%; opacity: 0;"
+	data-700="opacity: 1; top:0%; left:0%;"
+	data-1300="opacity: 1; top:0%; left:0%;"
+	data-1500="top:100%; left:100%; opacity: 0;">
+	<h2><a href="javascript:alert('1231231')">Đây là content 1</a></h2>
+	<p>Đây là paragaraphic 1</p>		
+	</div>
+	<div class="content"
+	data-1500="top:0%; left:100%; opacity: 0;"
+	data-1700="opacity: 1; top:0%; left:0%;"
+	data-2300="opacity: 1; top:0%; left:0%;"
+	data-2500="top:100%; left:-100%; opacity: 0;">
+	<h2><a href="javascript:alert('2sdfsdf')">Đây là content 2</a></h2>
+	<p>Đây là paragaraphic 2</p>
+	</div>
+	<div class="content"
+	data-2500="top:100%; left:0%; opacity: 0;"
+	data-2700="opacity: 1; top:0%; left:0%;"
+	data-3300="opacity: 1; top:0%; left:0%;"
+	data-3500="top:-100%; left:100%; opacity: 0;">
+	<h2><a href="javascript:alert('3xcvxcv')">Đây là content 3</a></h2>
+	<p>Đây là paragaraphic 3</p>
+	</div>
+	<div class="content"
+	data-3500="top:0%; left:100%; opacity: 0;"
+	data-3700="opacity: 1; top:0%; left:0%;"
+	data-4300="opacity: 1; top:0%; left:0%;"
+	data-4500="top:100%; left:-100%; opacity: 0;">
+	<h2><a href="javascript:alert('4fwefwe')">Đây là content 4</a></h2>
+	<p>Đây là paragaraphic 4</p>
+	</div>
+	<div class="content"
+	data-4500="top:100%; left:0%; opacity: 0;"
+	data-4700="opacity: 1; top:0%; left:0%;"
+	data-5300="opacity: 1; top:0%; left:0%;"
+	data-5500="top:-100%; left:100%; opacity: 0;">
+	<h2><a href="javascript:alert('5')">Đây là content 5</a></h2>
+	<p>Đây là paragaraphic 5</p>
 	</div>
 
 	<script type="text/javascript" src="js/skrollr.min.js"></script>
