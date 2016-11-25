@@ -1,0 +1,201 @@
+<!--Masterial Components-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>FRONT THEME</title>
+
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+
+	<!-- Masterial file -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+</head>
+
+<body>
+
+	<!--SLIDE 1-->
+	<div class="bcg" style="background-image:url('img/1.jpg');"
+	data-0="opacity: 1;"
+	data-500="opacity: 1; width: 100%; height: 100%;"
+	data-1500="opacity: 1;">
+	</div>
+	<div class="content mdl-cell mdl-cell--6-col"
+	data-500="top:100%; left:100%; opacity: 0; transform: rotate(110deg);"
+	data-700="opacity: 1; top:0%; left:0%; transform: rotate(0deg);"
+	data-1300="opacity: 1; top:0%; left:0%; transform: rotate(0deg);"
+	data-1500="top:100%; left:100%; opacity: 0; transform: rotate(50deg);">
+	<h3 id="dong">LOREM IPSUM DOLOR SIT AMET 1</h3>
+	<p>1. Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>		
+	</div>
+
+	<!--SLIDE 2-->
+	<div class="bcg" style="background-image:url('img/2.jpg');"
+	data-1000="opacity: 0; width: 100%; height: 100%; top: 0%; left: 0%;"
+	data-1500="opacity: 1; width: 120%; height: 120%; top: -10%; left: -10%;"
+	data-2500="opacity: 1;">
+	</div>
+	<div class="content mdl-cell mdl-cell--6-col"
+	data-1500="top:0%; left:100%; opacity: 0; transform: rotate(120deg);"
+	data-1700="opacity: 1; top:0%; left:0%; transform: rotate(0deg);"
+	data-2300="opacity: 1; top:0%; left:0%; transform: rotate(0deg);"
+	data-2500="top:100%; left:-100%; opacity: 0; transform: rotate(20deg);">
+	<h3>LOREM IPSUM DOLOR SIT AMET 2</h3>
+	<p>2. Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
+	</div>
+
+	<!--SLIDE 3-->
+	<div class="bcg" style="background-image:url('img/3.jpg');"
+	data-2000="opacity: 0; width: 120%; height: 120%; top: -10%; left: -10%;"
+	data-2500="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;"
+	data-3500="opacity: 1;">
+	</div>
+	<div class="content mdl-cell mdl-cell--6-col"
+	data-2500="top:100%; left:0%; opacity: 0; transform: rotate(10deg);"
+	data-2700="opacity: 1; top:0%; left:0%; transform: rotate(0deg);"
+	data-3300="opacity: 1; top:0%; left:0%; transform: rotate(0deg);"
+	data-3500="top:-100%; left:100%; opacity: 0; transform: rotate(100deg);">
+	<h3>LOREM IPSUM DOLOR SIT AMET 3</h3>
+	<p>3. Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
+	</div>
+
+	<!--SLIDE 4-->
+	<div class="bcg" style="background-image:url('img/4.jpg');"
+	data-3000="opacity: 0; width: 100%; height: 100%; top: 0%; left: 0%;"
+	data-3500="opacity: 1; width: 120%; height: 120%; top: -10%; left: -10%;"
+	data-4500="opacity: 1;">
+	</div>
+	<div class="content mdl-cell mdl-cell--6-col"
+	data-3500="top:0%; left:100%; opacity: 0; transform: rotate(80deg);"
+	data-3700="opacity: 1; top:0%; left:0%; transform: rotate(0deg);"
+	data-4300="opacity: 1; top:0%; left:0%; transform: rotate(0deg);"
+	data-4500="top:100%; left:-100%; opacity: 0; transform: rotate(190deg);">
+	<h3><a href="#dong">LOREM IPSUM DOLOR SIT AMET 4</a></h3>
+	<p>4. Lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
+	</div>
+
+	<!--SLIDE 5-->
+	<div class="bcg" style="background-image:url('img/5.jpg');"
+	data-4000="opacity: 0; width: 120%; height: 120%; top: -10%; left: -10%;"
+	data-4500="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;"
+	data-5500="opacity: 1;">
+	</div>
+	<div class="content mdl-cell mdl-cell--6-col"
+	data-4500="top:100%; left:0%; opacity: 0; transform: rotate(80deg);"
+	data-4700="opacity: 1; top:0%; left:0%; transform: rotate(0deg);"
+	data-5300="opacity: 1; top:0%; left:0%; transform: rotate(0deg);"
+	data-5500="top:-100%; left:100%; opacity: 0; transform: rotate(160deg);">
+	<h3 class="yellow">XIN MỜI ĐẶT BÀN :)</h3>
+
+	<!--BEGIN: Components-->
+
+	<!-- Simple Textfield -->
+	<div class="mdl-textfield mdl-js-textfield">
+		<input class="mdl-textfield__input" type="text" id="sample1">
+		<label class="mdl-textfield__label white" for="sample1">Họ và Tên...</label>
+	</div>
+	<!-- Numeric Textfield -->
+	<div class="mdl-textfield mdl-js-textfield">
+		<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+		<label class="mdl-textfield__label pink" for="sample2">Số điện thoại...</label>
+		<span class="mdl-textfield__error">Xin vui lòng chỉ nhập số!</span>
+	</div>
+	<!--float lable-->
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+	<input class="mdl-textfield__input" type="text" id="addr1">
+	<label class="mdl-textfield__label green" for="addr1">Địa chỉ của bạn</label>
+	</div>
+	
+	<p>
+	<div class="mdl-textfield mdl-js-textfield"><textarea class="mdl-textfield__input" type="text" rows="3" maxrows="6"
+	id="schools"></textarea>
+	<label class="mdl-textfield__label blue" for="schools">Bạn có yêu cầu đặc biệt nào không?</label>
+	</div>
+
+	<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+	<input type="checkbox" id="checkbox-1" class="mdl-checkbox__input">
+	<span class="mdl-checkbox__label">Checkbox</span>
+	</label>
+	<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+	<input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+	<span class="mdl-checkbox__label">Checkbox</span>
+	</label>
+	<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
+	<input type="checkbox" id="checkbox-3" class="mdl-checkbox__input">
+	<span class="mdl-checkbox__label">Checkbox</span>
+	</label>
+
+	<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+	<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+	<span class="mdl-radio__label">First</span>
+	</label>
+	<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+	<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+	<span class="mdl-radio__label">Second</span>
+	</label>
+	</p>
+
+	<!-- SIMPLE DIALOG -->
+	<p>
+	<button id="show-dialog" type="button" class="mdl-button orange">Gửi yêu cầu</button>
+	<!-- Colored raised button -->
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+	Button
+	</button>
+	<!-- Accent-colored raised button with ripple -->
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+	Button
+	</button>
+	<!-- Colored FAB button with ripple -->
+	<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+	<i class="material-icons">add</i>
+	</button>
+	<!-- FAB button with ripple -->
+	<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+	<i class="material-icons">add</i>
+	</button>
+	</p>
+	<dialog class="mdl-dialog">
+		<h4 class="mdl-dialog__title"></h4>
+		<div class="mdl-dialog__content">
+		<p>
+			Bạn sẽ thanh toán như thế nào?
+		</p>
+		</div>
+		<div class="mdl-dialog__actions">
+		<button type="button" class="mdl-button">Tiền tươi</button>
+		<button type="button" class="mdl-button close">Ăn chịu</button>
+		</div>
+	</dialog>
+	<script>
+		var dialog = document.querySelector('dialog');
+		var showDialogButton = document.querySelector('#show-dialog');
+		if (! dialog.showModal) {
+		dialogPolyfill.registerDialog(dialog);
+		}
+		showDialogButton.addEventListener('click', function() {
+		dialog.showModal();
+		});
+		dialog.querySelector('.close').addEventListener('click', function() {
+		dialog.close();
+		});
+	</script>	
+
+	<!--END: Components-->
+
+	</div>
+	<!--MENU right-->    
+                    <!-- Right aligned menu on top of button  -->
+					<a href="#"><i class="material-icons menu-top-right">&#xE8FB;</i></a>
+
+	<!--JS file-->
+	<script type="text/javascript" src="js/skrollr.min.js"></script>
+	<script type="text/javascript" src="js/mn.skrollr.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	
+
+</body>
+</html>
